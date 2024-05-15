@@ -1,0 +1,28 @@
+{
+  "name": "first-node-project",
+  "version": "1.0.0",
+  "description": "\"This is my first node project\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "",
+    "dev": "",
+    "beto": "echo \"Hello Ricardo\""
+  },
+  "keywords": [
+    "node",
+    "learn",
+    "firstProject"
+  ],
+  "author": "Ricardo10111",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.2.0",
+    "eslint": "^9.2.0",
+    "globals": "^15.2.0",
+    "prettier": "^3.2.5"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
