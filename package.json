@@ -4,7 +4,7 @@
   "description": "\"This is my first node project\"",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node Tareas/index.js",
     "test": "",
     "dev": "",
     "beto": "echo \"Hello Ricardo\""
