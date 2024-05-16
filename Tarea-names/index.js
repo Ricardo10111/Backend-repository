@@ -25,7 +25,7 @@ console.log(`Estos son la cantidad de nombres que ingresaste: ${names.length}`);
 
 const nombresRepetidos = names.filter((name, index) => names.indexOf(name) !== index)
 if (nombresRepetidos.length > 0) {
-    console.log(`Estos son los nombres repetidos: ${nombresRepetidos}` )
+    console.log(`Estos son los nombres repetidos: ${nombresRepetidos}`)
 } else {
     console.log('No hay nombres repetidos')
 }
