@@ -13,6 +13,8 @@ function init() {
   const fileExists = fs.existsSync(dbFile);
   if (!fileExists) {
     fs.writeFileSync(dbFile, JSON.stringify({ koders: [] }));
+  } else {
+    console.log("File already exists");
   }
 }
 
