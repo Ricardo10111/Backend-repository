@@ -5,19 +5,19 @@ const port = 8080;
 
 app.use(express.json());
 
-const kodersFile = "koders.json";
+const kodersDbFile = "koders.json";
 
-if (!fs.existsSync(kodersFile)) {
-  fs.writeFileSync(kodersFile, JSON.stringify({ koders: [] }));
+if (!fs.existsSync(kodersDbFile)) {
+  fs.writeFileSync(kodersDbFile, JSON.stringify({ koders: [] }));
 }
 
 function readKoders() {
-  const data = fs.readFileSync(kodersFile, "utf8");
+  const data = fs.readFileSync(kodersDbFile, "utf8");
   return JSON.parse(data).koders;
 }
 
 function writeKoders(koders) {
-  fs.writeFileSync(kodersFile, JSON.stringify({ koders: koders }));
+  fs.writeFileSync(kodersDbFile, JSON.stringify({ koders: koders }));
 }
 
 app.post("/koders", (req, res) => {
