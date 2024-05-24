@@ -49,6 +49,11 @@ app.post("/koders", (req, res) => {
   }
 
   const koders = readKoders();
+
+  if(koders.find((koder) => koder.name === newKoder.name)) {
+    res.status(400).json({ error: "Koder already exists" });
+    return;
+  }
   koders.push(newKoder);
   writeKoders(koders);
   res.status(201).json({ message: "Koder added", koder: newKoder, koders });
