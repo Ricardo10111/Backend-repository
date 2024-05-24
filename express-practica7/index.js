@@ -51,7 +51,7 @@ app.post("/koders", (req, res) => {
   const koders = readKoders();
   koders.push(newKoder);
   writeKoders(koders);
-  res.status(201).json({ message: "Koder added", koder: newKoder });
+  res.status(201).json({ message: "Koder added", koder: newKoder, koders });
 });
 
 app.get("/koders", (req, res) => {
@@ -70,7 +70,7 @@ app.delete("/koders/:name", (req, res) => {
   }
 
   writeKoders(koders);
-  res.json({ message: "Koder removed", name });
+  res.json({ message: "Koder removed", name, koders });
 });
 
 app.delete("/koders", (req, res) => {
