@@ -8,7 +8,7 @@ app.use(express.json());
 const kodersFile = "koders.json";
 
 if (!fs.existsSync(kodersFile)) {
-  fs.writeFileSync(kodersFile, JSON.stringify({ koders: [] }, null, 2));
+  fs.writeFileSync(kodersFile, JSON.stringify({ koders: [] }));
 }
 
 function readKoders() {
