@@ -2,7 +2,7 @@ const express = require('express')
 const server = express()
 
 const kodersRouter = require('./koders.router')
-const { Koder } = require('./db')
+
 
 
 server.use(express.json())

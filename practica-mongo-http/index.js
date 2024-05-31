@@ -1,5 +1,4 @@
 const server = require('./server.js')
-const db = require('./db.js')
 
 const port = 8080
 server.listen(port, () => {
