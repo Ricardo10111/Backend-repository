@@ -1,12 +1,12 @@
 const express = require('express')
 
-const  Koder  = require('./db')
+const { Koder } = require('./db')
 // /koders
 const router = express.Router()
 
-router.get('/',  (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const allKoders =  Koder.find()
+    const allKoders = await Koder.find()
     res.json({
       message: 'All koders',
       data: allKoders
@@ -19,14 +19,16 @@ router.get('/',  (req, res) => {
   }
 })
 
-router.post('/',  (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const newKoder = new Koder(req.body)
-    const koderCreated =  newKoder.save()
+    const korderSaved = await newKoder.save()
+    const allKoders = await Koder.find()
     res.status(201)
     res.json({
       message: 'Koder created',
-      data: koderCreated
+      data: korderSaved,
+      allData: allKoders
     })
   } catch (error) {
     res.status(error.status || 500)
