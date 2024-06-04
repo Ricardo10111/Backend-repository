@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
       }
     })
   } catch (error) {
-    res.status(400)
+    res.status(error.status || 500)
     res.json({
       success: false,
       message: 'Error at create koder',
