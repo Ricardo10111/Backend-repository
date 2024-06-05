@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+// const generationModel = require('./generations.model')
 
 const modelName = 'koder'
 
@@ -34,6 +35,14 @@ const koderSchema = new mongoose.Schema({
   //     max: 100,
   //     required: true
   // },
+
+  generation: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "generations",
+    required: true
+    
+  },
+
   createdAt: {
     type: Date,
     default: Date.now
