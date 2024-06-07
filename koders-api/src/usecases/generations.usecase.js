@@ -2,8 +2,10 @@ const Generation = require('../models/generations.model')
 const createError = require('http-errors')
 
 async function createGeneration(generationData) {
-  if (!generationData) throw createError(400, 'Generation data is required')
-
+    const existingGeneration = await Generation.findOne({ number: generationData.number, program: generationData.program})
+    if (existingGeneration) {
+        throw createError(400, `Generation ${generationData.number} already exists`)
+    }
   const generation = await Generation.create(generationData)
   return generation
 }

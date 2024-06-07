@@ -17,12 +17,12 @@ async function create(koderData) {
 }
 
 async function getAll() {
-  const allkoders = await Koders.find()
+  const allkoders = await Koders.find().populate('generation')
   return allkoders
 }
 
 async function getById(id) {
-  const koder = await Koders.findById(id)
+  const koder = await Koders.findById(id).populate('generation')
   return koder
 }
 

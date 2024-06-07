@@ -1,3 +1,4 @@
+const cors = require('cors')
 const express = require('express')
 const kodersRouter = require('./routes/koders.routes')
 const mentorsRouter = require('./routes/mentors.routes')
@@ -10,6 +11,8 @@ const mentorsUseCase = require('./usecases/mentors.usecase')
 const generationUseCase = require('./usecases/generations.usecase')
 
 const app = express()
+
+app.use(cors())
 app.use(express.json())
 
 app.use('/koders', kodersRouter)

@@ -38,11 +38,9 @@ const koderSchema = new mongoose.Schema({
 
   generation: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "generations",
+    ref: 'generations',
     required: true
-    
   },
-
   createdAt: {
     type: Date,
     default: Date.now
